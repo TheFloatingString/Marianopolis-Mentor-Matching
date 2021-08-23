@@ -25,9 +25,25 @@ def post_file_upload():
 
 		result = match_obj.generate()
 
+		sorted_results = match_obj.return_top_mentors_for_mentees()
+
 		with open("static/output/final_matching.csv", "w") as outputfile:
 			write = csv.writer(outputfile)
 			write.writerows(result)
+
+
+		return_str = "<a href='/get_matching'>Return results</a><br><br>"
+
+		for result in sorted_results["results"]:
+
+			return_str += f"<p>{result}<p>"
+
+
+
+		return return_str
+
+@app.route("/get_matching", methods=["GET", "POST"])
+def get_matching():
 
 		return send_file("static/output/final_matching.csv")
 
