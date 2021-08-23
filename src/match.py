@@ -43,37 +43,37 @@ class Match():
 
 
 				# check programs (more weight)
-				if mentor_row[26].lower() == mentee_row[29].lower():
+				if mentor_row[7].lower() == mentee_row[7].lower():
 					score += 1
 
 				# check language
-				if mentor_row[31]==mentee_row[34] or mentor_row[32]==mentee_row[35] or mentor_row[34]==mentee_row[37]:
+				if mentor_row[31]==mentee_row[35] or mentor_row[32]==mentee_row[36] or mentor_row[34]==mentee_row[38]:
 					score += 1
 				else:
 					score += 1
 
 				# check gender (give score of 0 if there is a preference)
-				if mentor_row[36]=="1" or mentee_row[38]=="1":
-					if mentor_row[16]==mentee_row[16] and mentor_row[17]==mentee_row[17] and mentor_row[18]==mentee_row[18]:
+				if mentor_row[36]=="1" or mentee_row[39]=="1":
+					if mentor_row[16]==mentee_row[17] and mentor_row[17]==mentee_row[18] and mentor_row[19]==mentee_row[20]:
 						score += 1
 				else:
 					score += 1
 
 				# check activities outside of Marianopolis
 				for word in mentor_row[38].lower().split():
-					if word in mentee_row[40].lower():
+					if word in mentee_row[41].lower():
 						score += 1
 						break
 
 				# check activities at Marianopolis
 				for word in mentor_row[40].lower().split():
-					if word in mentee_row[42].lower():
+					if word in mentee_row[43].lower():
 						score += 1
 						break
 
 				# check hobbies (42)
 				for word in mentor_row[42].lower().split():
-					if word in mentee_row[44].lower():
+					if word in mentee_row[45].lower():
 						score += 1
 						break
 
