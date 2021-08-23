@@ -40,7 +40,7 @@ def post_file_upload():
 
 
 
-		return return_str
+		return render_template("results.html", results=return_str)
 
 @app.route("/get_matching", methods=["GET", "POST"])
 def get_matching():
